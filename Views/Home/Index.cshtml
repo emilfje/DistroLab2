@@ -1,0 +1,32 @@
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Logged in as: @User.Identity.Name
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                You have @ViewBag.UnreadMessages unread messages.
+            </td>
+            <td>
+                <a asp-controller="Read" asp-action="Index" asp-route-id="@User.Identity.Name">View unread messages</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Your last login was: @ViewBag.LastLogin
+            </td>
+            <td>
+                You have logged in: @ViewBag.monthlyLogins time(s) this month.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
